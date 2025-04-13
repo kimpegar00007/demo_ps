@@ -1,0 +1,994 @@
+Attempting to get payroll for employee_id=3, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 3:
+ID: 13, Period ID: 7
+ID: 16, Period ID: 8
+ID: 19, Period ID: 9
+ID: 22, Period ID: 10
+ID: 25, Period ID: 11
+ID: 26, Period ID: 12
+ID: 30, Period ID: 13
+ID: 34, Period ID: 14
+ID: 35, Period ID: 15
+ID: 40, Period ID: 16
+ID: 43, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=4, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 4:
+ID: 27, Period ID: 12
+ID: 31, Period ID: 13
+ID: 36, Period ID: 15
+ID: 39, Period ID: 16
+ID: 42, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=2, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 2:
+ID: 12, Period ID: 7
+ID: 15, Period ID: 8
+ID: 18, Period ID: 9
+ID: 21, Period ID: 10
+ID: 24, Period ID: 11
+ID: 28, Period ID: 12
+ID: 32, Period ID: 13
+ID: 37, Period ID: 15
+ID: 41, Period ID: 16
+ID: 44, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=1, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 1:
+ID: 11, Period ID: 7
+ID: 14, Period ID: 8
+ID: 17, Period ID: 9
+ID: 20, Period ID: 10
+ID: 23, Period ID: 11
+ID: 29, Period ID: 12
+ID: 33, Period ID: 13
+ID: 38, Period ID: 15
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=3, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 3:
+ID: 13, Period ID: 7
+ID: 16, Period ID: 8
+ID: 19, Period ID: 9
+ID: 22, Period ID: 10
+ID: 25, Period ID: 11
+ID: 26, Period ID: 12
+ID: 30, Period ID: 13
+ID: 34, Period ID: 14
+ID: 35, Period ID: 15
+ID: 40, Period ID: 16
+ID: 43, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=4, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 4:
+ID: 27, Period ID: 12
+ID: 31, Period ID: 13
+ID: 36, Period ID: 15
+ID: 39, Period ID: 16
+ID: 42, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=2, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 2:
+ID: 12, Period ID: 7
+ID: 15, Period ID: 8
+ID: 18, Period ID: 9
+ID: 21, Period ID: 10
+ID: 24, Period ID: 11
+ID: 28, Period ID: 12
+ID: 32, Period ID: 13
+ID: 37, Period ID: 15
+ID: 41, Period ID: 16
+ID: 44, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=1, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 1:
+ID: 11, Period ID: 7
+ID: 14, Period ID: 8
+ID: 17, Period ID: 9
+ID: 20, Period ID: 10
+ID: 23, Period ID: 11
+ID: 29, Period ID: 12
+ID: 33, Period ID: 13
+ID: 38, Period ID: 15
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=3, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 3:
+ID: 13, Period ID: 7
+ID: 16, Period ID: 8
+ID: 19, Period ID: 9
+ID: 22, Period ID: 10
+ID: 25, Period ID: 11
+ID: 26, Period ID: 12
+ID: 30, Period ID: 13
+ID: 34, Period ID: 14
+ID: 35, Period ID: 15
+ID: 40, Period ID: 16
+ID: 43, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=4, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 4:
+ID: 27, Period ID: 12
+ID: 31, Period ID: 13
+ID: 36, Period ID: 15
+ID: 39, Period ID: 16
+ID: 42, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=2, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 2:
+ID: 12, Period ID: 7
+ID: 15, Period ID: 8
+ID: 18, Period ID: 9
+ID: 21, Period ID: 10
+ID: 24, Period ID: 11
+ID: 28, Period ID: 12
+ID: 32, Period ID: 13
+ID: 37, Period ID: 15
+ID: 41, Period ID: 16
+ID: 44, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=1, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 1:
+ID: 11, Period ID: 7
+ID: 14, Period ID: 8
+ID: 17, Period ID: 9
+ID: 20, Period ID: 10
+ID: 23, Period ID: 11
+ID: 29, Period ID: 12
+ID: 33, Period ID: 13
+ID: 38, Period ID: 15
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=3, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 3:
+ID: 13, Period ID: 7
+ID: 16, Period ID: 8
+ID: 19, Period ID: 9
+ID: 22, Period ID: 10
+ID: 25, Period ID: 11
+ID: 26, Period ID: 12
+ID: 30, Period ID: 13
+ID: 34, Period ID: 14
+ID: 35, Period ID: 15
+ID: 40, Period ID: 16
+ID: 43, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=4, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 4:
+ID: 27, Period ID: 12
+ID: 31, Period ID: 13
+ID: 36, Period ID: 15
+ID: 39, Period ID: 16
+ID: 42, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=2, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 2:
+ID: 12, Period ID: 7
+ID: 15, Period ID: 8
+ID: 18, Period ID: 9
+ID: 21, Period ID: 10
+ID: 24, Period ID: 11
+ID: 28, Period ID: 12
+ID: 32, Period ID: 13
+ID: 37, Period ID: 15
+ID: 41, Period ID: 16
+ID: 44, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=1, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 1:
+ID: 11, Period ID: 7
+ID: 14, Period ID: 8
+ID: 17, Period ID: 9
+ID: 20, Period ID: 10
+ID: 23, Period ID: 11
+ID: 29, Period ID: 12
+ID: 33, Period ID: 13
+ID: 38, Period ID: 15
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=4, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 4:
+ID: 27, Period ID: 12
+ID: 31, Period ID: 13
+ID: 36, Period ID: 15
+ID: 39, Period ID: 16
+ID: 42, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=3, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 3:
+ID: 13, Period ID: 7
+ID: 16, Period ID: 8
+ID: 19, Period ID: 9
+ID: 22, Period ID: 10
+ID: 25, Period ID: 11
+ID: 26, Period ID: 12
+ID: 30, Period ID: 13
+ID: 34, Period ID: 14
+ID: 35, Period ID: 15
+ID: 40, Period ID: 16
+ID: 43, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=2, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 2:
+ID: 12, Period ID: 7
+ID: 15, Period ID: 8
+ID: 18, Period ID: 9
+ID: 21, Period ID: 10
+ID: 24, Period ID: 11
+ID: 28, Period ID: 12
+ID: 32, Period ID: 13
+ID: 37, Period ID: 15
+ID: 41, Period ID: 16
+ID: 44, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=1, start_date=2025-04-01, end_date=2025-04-15
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 1:
+ID: 11, Period ID: 7
+ID: 14, Period ID: 8
+ID: 17, Period ID: 9
+ID: 20, Period ID: 10
+ID: 23, Period ID: 11
+ID: 29, Period ID: 12
+ID: 33, Period ID: 13
+ID: 38, Period ID: 15
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=3, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 3:
+ID: 13, Period ID: 7
+ID: 16, Period ID: 8
+ID: 19, Period ID: 9
+ID: 22, Period ID: 10
+ID: 25, Period ID: 11
+ID: 26, Period ID: 12
+ID: 30, Period ID: 13
+ID: 34, Period ID: 14
+ID: 35, Period ID: 15
+ID: 40, Period ID: 16
+ID: 43, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=4, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 4:
+ID: 27, Period ID: 12
+ID: 31, Period ID: 13
+ID: 36, Period ID: 15
+ID: 39, Period ID: 16
+ID: 42, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=2, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 2:
+ID: 12, Period ID: 7
+ID: 15, Period ID: 8
+ID: 18, Period ID: 9
+ID: 21, Period ID: 10
+ID: 24, Period ID: 11
+ID: 28, Period ID: 12
+ID: 32, Period ID: 13
+ID: 37, Period ID: 15
+ID: 41, Period ID: 16
+ID: 44, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=1, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 1:
+ID: 11, Period ID: 7
+ID: 14, Period ID: 8
+ID: 17, Period ID: 9
+ID: 20, Period ID: 10
+ID: 23, Period ID: 11
+ID: 29, Period ID: 12
+ID: 33, Period ID: 13
+ID: 38, Period ID: 15
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=3, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 3:
+ID: 13, Period ID: 7
+ID: 16, Period ID: 8
+ID: 19, Period ID: 9
+ID: 22, Period ID: 10
+ID: 25, Period ID: 11
+ID: 26, Period ID: 12
+ID: 30, Period ID: 13
+ID: 34, Period ID: 14
+ID: 35, Period ID: 15
+ID: 40, Period ID: 16
+ID: 43, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=4, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 4:
+ID: 27, Period ID: 12
+ID: 31, Period ID: 13
+ID: 36, Period ID: 15
+ID: 39, Period ID: 16
+ID: 42, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=2, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 2:
+ID: 12, Period ID: 7
+ID: 15, Period ID: 8
+ID: 18, Period ID: 9
+ID: 21, Period ID: 10
+ID: 24, Period ID: 11
+ID: 28, Period ID: 12
+ID: 32, Period ID: 13
+ID: 37, Period ID: 15
+ID: 41, Period ID: 16
+ID: 44, Period ID: 17
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
+Attempting to get payroll for employee_id=1, start_date=2025-04-01, end_date=2025-04-11
+All payroll periods in the database:
+ID: 7, Start: 2025-04-01, End: 2025-04-15
+ID: 8, Start: 2025-04-01, End: 2025-04-15
+ID: 9, Start: 2025-04-01, End: 2025-04-15
+ID: 10, Start: 2025-04-01, End: 2025-04-15
+ID: 11, Start: 2025-05-01, End: 2025-05-15
+ID: 12, Start: 2025-04-16, End: 2025-04-30
+ID: 13, Start: 2025-05-16, End: 2025-05-30
+ID: 14, Start: 2025-04-10, End: 2025-04-11
+ID: 15, Start: 2025-05-31, End: 2025-06-14
+ID: 16, Start: 2025-04-11, End: 2025-04-22
+ID: 17, Start: 2025-04-11, End: 2025-04-16
+Payroll items for employee 1:
+ID: 11, Period ID: 7
+ID: 14, Period ID: 8
+ID: 17, Period ID: 9
+ID: 20, Period ID: 10
+ID: 23, Period ID: 11
+ID: 29, Period ID: 12
+ID: 33, Period ID: 13
+ID: 38, Period ID: 15
+SQL Query: SELECT 
+                SUM(pi.basic_pay) as basic_pay,
+                SUM(pi.overtime_pay) as overtime_pay,
+                SUM(pi.deductions) as deductions,
+                SUM(pi.net_pay) as net_pay
+            FROM payroll_items pi
+            JOIN payroll_periods pp ON pi.payroll_period_id = pp.id
+            WHERE pi.employee_id = :employee_id
+            AND (
+                (pp.period_start >= :start_date AND pp.period_start <= :end_date) OR
+                (pp.period_end >= :start_date AND pp.period_end <= :end_date) OR
+                (pp.period_start <= :start_date AND pp.period_end >= :end_date)
+            )
